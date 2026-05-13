@@ -773,16 +773,16 @@ const FeatureQuadImageSlide = ({ title, images, active }) => (
 );
 
 const AuthFlowSlide = ({ title, images, active }) => (
-  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"22px 44px",gap:10,overflow:"hidden"}}>
+  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"20px 30px",gap:10,overflow:"hidden"}}>
     <NoiseBg/><GeoBg/>
     {active&&<>
-      <div style={{textAlign:"center",animation:"fadeUp .6s .15s ease both",opacity:0}}>
-        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:36,fontWeight:600,color:C.white,letterSpacing:"-0.01em"}}>{title}</h2>
-        <Rule delay={0.25} width={70}/>
+      <div style={{textAlign:"center",animation:"fadeUp .6s .15s ease both",opacity:0,maxWidth:"90%"}}>
+        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:28,fontWeight:600,color:C.white,letterSpacing:"-0.01em",margin:0}}>{title}</h2>
+        <Rule delay={0.25} width={60}/>
       </div>
-      <div style={{width:"100%",maxWidth:900,display:"grid",gridTemplateColumns:"1fr 1fr",gap:14,animation:"fadeUp .6s .35s ease both",opacity:0}}>
+      <div style={{width:"100%",maxWidth:850,display:"grid",gridTemplateColumns:"1fr 1fr",gap:12,animation:"fadeUp .6s .35s ease both",opacity:0}}>
         {images.map((src,i)=>(
-          <img key={i} src={src} style={{width:"100%",height:"100%",maxHeight:280,borderRadius:12,border:`1px solid ${C.gold}30`,boxShadow:"0 14px 36px rgba(0,0,0,0.4)",objectFit:"contain",background:"rgba(7,17,31,0.4)"}}/>
+          <img key={i} src={src} style={{width:"100%",height:"100%",maxHeight:260,borderRadius:12,border:`1px solid ${C.gold}30`,boxShadow:"0 14px 36px rgba(0,0,0,0.4)",objectFit:"contain",background:"rgba(7,17,31,0.4)"}}/>
         ))}
       </div>
     </>}
