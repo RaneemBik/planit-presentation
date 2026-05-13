@@ -457,7 +457,7 @@ const Slide5 = ({ active }) => (
           ].map((item,i)=>(
             <div key={i} style={{animation:`fadeUp .6s ${item.delay}s ease both`,opacity:0}}>
               <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:16,fontWeight:600,color:item.color,marginBottom:6}}>{item.title}</div>
-              <img src={item.img} style={{width:"100%",aspectRatio:"4/3",marginBottom:8,borderRadius:6,objectFit:"cover",border:`1px solid ${C.line}`,background:"rgba(255,255,255,0.03)"}}/>
+              <img src={item.img} style={{width:"100%",aspectRatio:"4/3",marginBottom:8,borderRadius:6,objectFit:"cover",border:`1px solid ${C.line}`,background:"rgba(255,255,255,0.03)",maxHeight:"200px"}}/>
               <p style={{fontFamily:"'Inter',sans-serif",fontSize:10,fontWeight:300,color:C.slate,lineHeight:1.6}}>{item.note}</p>
             </div>
           ))}
@@ -476,7 +476,7 @@ const FeatureCard = ({ num, title, label, note, color, delay, img }) => (
       <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:9,color:`${color}80`}}>{String(num).padStart(2,"0")}</span>
       <span style={{fontFamily:"'Cormorant Garamond',serif",fontSize:16,fontWeight:600,color:C.white}}>{title}</span>
     </div>
-    <img src={img} style={{width:"100%",aspectRatio:"16/9",marginBottom:7,borderTop:`1px solid ${color}35`,border:`1px solid ${C.line}`,borderRadius:6,objectFit:"cover",background:"rgba(255,255,255,0.03)"}}/>
+    <img src={img} style={{width:"100%",aspectRatio:"16/9",marginBottom:7,borderTop:`1px solid ${color}35`,border:`1px solid ${C.line}`,borderRadius:6,objectFit:"cover",background:"rgba(255,255,255,0.03)",maxHeight:"280px"}}/>
     <p style={{fontFamily:"'Inter',sans-serif",fontSize:10,fontWeight:300,color:C.slate,lineHeight:1.55}}>{note}</p>
   </div>
 );
@@ -511,7 +511,7 @@ const Slide6 = ({ active }) => (
 const AIFeatureCardCompact = ({ title, label, note, delay, img }) => (
   <div style={{animation:`fadeUp .55s ${delay}s ease both`,opacity:0,display:"flex",flexDirection:"column",minHeight:0}}>
     <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:13,fontWeight:600,color:C.white,marginBottom:4}}>{title}</div>
-    <img src={img} style={{flex:1,minHeight:0,width:"100%",border:"1px solid rgba(167,139,250,0.25)",borderTop:"1px solid rgba(167,139,250,0.35)",borderRadius:6,objectFit:"cover",background:"rgba(255,255,255,0.03)",marginBottom:4}}/>
+    <img src={img} style={{flex:1,minHeight:0,width:"100%",border:"1px solid rgba(167,139,250,0.25)",borderTop:"1px solid rgba(167,139,250,0.35)",borderRadius:6,objectFit:"cover",background:"rgba(255,255,255,0.03)",marginBottom:4,maxHeight:"240px"}}/>
     <p style={{fontFamily:"'Inter',sans-serif",fontSize:9,fontWeight:300,color:C.slate,lineHeight:1.5,flexShrink:0}}>{note}</p>
   </div>
 );
@@ -582,6 +582,99 @@ const Slide8 = ({ active }) => (
 );
 
 /* ══════════════════════════════════════════════════════════════════
+   SLIDE 10 — FUTURE ENHANCEMENTS
+══════════════════════════════════════════════════════════════════ */
+const Slide10 = ({ active }) => (
+  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",padding:"44px 80px",gap:52,overflow:"hidden"}}>
+    <NoiseBg/>
+    <div style={{width:210,flexShrink:0,display:"flex",flexDirection:"column",justifyContent:"center",position:"relative",zIndex:1}}>
+      {active&&<>
+        <SLabel n={10} title="Roadmap" delay={0.05}/>
+        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:48,fontWeight:600,color:C.white,lineHeight:0.95,letterSpacing:"-0.01em",animation:"fadeUp .6s .15s ease both",opacity:0}}>Future<br/><span className="gold-shimmer">Enhancements</span></h2>
+        <Rule delay={0.3} width={40}/>
+        <p style={{fontFamily:"'Inter',sans-serif",fontSize:11,fontWeight:300,color:C.slate,lineHeight:1.8,animation:"fadeUp .6s .4s ease both",opacity:0}}>Next-phase features to expand platform capabilities and market reach.</p>
+      </>}
+    </div>
+    <div style={{flex:1,display:"flex",flexDirection:"column",justifyContent:"center",gap:11,position:"relative",zIndex:1}}>
+      {active&&<>
+        <AddRow delay={0.35} title="Vendor Integration APIs"          desc="Connect with caterers, florists, photographers, and venues. Commission-based marketplace for vendors."/>
+        <AddRow delay={0.42} title="Live Collaboration Tools"         desc="Real-time co-editing for event checklists and budgets. Live guest view updates for distributed teams."/>
+        <AddRow delay={0.49} title="Advanced Analytics Dashboard"     desc="Event ROI metrics, guest engagement tracking, post-event surveys, and trend analysis."/>
+        <AddRow delay={0.56} title="Blockchain Receipts"             desc="Immutable expense receipts stored on-chain for audit trails and vendor verification."/>
+        <AddRow delay={0.63} title="Social Event Feed"               desc="Public event discovery, guestsharing to social media, and event invitation through social handles."/>
+        <AddRow delay={0.70} title="Video Recording Integration"     desc="In-app event video capture and streaming. AI-generated highlight reels from event footage."/>
+        <AddRow delay={0.77} title="Predictive Crowd Analytics"      desc="Estimate venue capacity requirements based on historical RSVP patterns and guest behavior data."/>
+        <AddRow delay={0.84} title="Sustainability Tracking"         desc="Carbon footprint calculator for events. Green vendor recommendations and waste reduction insights."/>
+      </>}
+    </div>
+  </div>
+);
+
+/* ══════════════════════════════════════════════════════════════════
+   SLIDE 11 — VENDORS & EVENT PLANNERS
+══════════════════════════════════════════════════════════════════ */
+const Slide11 = ({ active }) => (
+  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",justifyContent:"center",padding:"40px 80px",overflow:"hidden"}}>
+    <NoiseBg/>
+    <div style={{position:"relative",zIndex:1}}>
+      {active&&<>
+        <SLabel n={11} title="Vendor Portal" delay={0.05}/>
+        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:50,fontWeight:600,color:C.white,letterSpacing:"-0.01em",animation:"fadeUp .6s .15s ease both",opacity:0}}>
+          Vendors & Event <span className="gold-shimmer">Planners</span>
+        </h2>
+        <Rule delay={0.3} width={40}/>
+
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:18,marginTop:4}}>
+          {[
+            { title:"Vendor Dashboard", sub:"Service Providers", color:C.gold,
+              points:["Profile & service listing","Real-time booking notifications","Client portfolio & reviews","Commission management & payouts"] },
+            { title:"Role-Based Access Control", sub:"Permission Management", color:C.accent,
+              points:["Admin: Full platform control","Event Planner: Multi-event management","Vendor: Booking & client communication","Guest: Limited view access only"] },
+            { title:"RSVP Templates & Tools", sub:"Customization", color:C.goldlt,
+              points:["Pre-built RSVP template library","Branded email sends","Custom questions & dynamic fields","Automated confirmation sequences"] },
+          ].map((u,i)=>(
+            <div key={i} style={{border:`1px solid ${C.line}`,borderTop:`1px solid ${u.color}60`,padding:"22px 22px 20px",background:"rgba(255,255,255,0.02)",position:"relative",animation:`fadeUp .6s ${0.4+i*0.12}s ease both`,opacity:0}}>
+              <div style={{position:"absolute",top:0,left:0,right:0,height:"0.5px",background:`linear-gradient(90deg,${u.color},transparent)`}}/>
+              <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:20,fontWeight:600,color:C.white,marginBottom:3}}>{u.title}</div>
+              <div style={{fontFamily:"'Inter',sans-serif",fontSize:9,letterSpacing:"0.12em",textTransform:"uppercase",color:u.color,marginBottom:14}}>{u.sub}</div>
+              <div style={{display:"flex",flexDirection:"column",gap:7}}>
+                {u.points.map((p,j)=>(
+                  <div key={j} style={{display:"flex",alignItems:"flex-start",gap:8,fontFamily:"'Inter',sans-serif",fontSize:12,fontWeight:300,color:C.slatel,lineHeight:1.5}}>
+                    <div style={{width:1,height:12,background:u.color,marginTop:2,flexShrink:0,opacity:0.6}}/>
+                    {p}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{marginTop:24,display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:18}}>
+          {[
+            { title:"Mobile App", color:C.goldlt, points:["iOS & Android native apps","Push notifications for bookings","Offline event access mode","QR code check-in scanner"] },
+            { title:"Vendor Collaboration", color:C.accent, points:["Direct messaging system","File sharing & documentation","Real-time booking management","Performance analytics & ratings"] },
+            { title:"Availability Calendar", color:C.gold, points:["Real-time vendor availability","Automated booking conflicts detection","Integrated scheduling interface","Commission tracking dashboard"] },
+          ].map((u,i)=>(
+            <div key={i} style={{border:`1px solid ${C.line}`,borderTop:`1px solid ${u.color}60`,padding:"22px 22px 20px",background:"rgba(255,255,255,0.02)",position:"relative",animation:`fadeUp .6s ${0.75+i*0.12}s ease both`,opacity:0}}>
+              <div style={{position:"absolute",top:0,left:0,right:0,height:"0.5px",background:`linear-gradient(90deg,${u.color},transparent)`}}/>
+              <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:20,fontWeight:600,color:C.white,marginBottom:8}}>{u.title}</div>
+              <div style={{display:"flex",flexDirection:"column",gap:7}}>
+                {u.points.map((p,j)=>(
+                  <div key={j} style={{display:"flex",alignItems:"flex-start",gap:8,fontFamily:"'Inter',sans-serif",fontSize:12,fontWeight:300,color:C.slatel,lineHeight:1.5}}>
+                    <div style={{width:1,height:12,background:u.color,marginTop:2,flexShrink:0,opacity:0.6}}/>
+                    {p}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </>}
+    </div>
+  </div>
+);
+
+/* ══════════════════════════════════════════════════════════════════
    SLIDE 9 — CHALLENGES
 ══════════════════════════════════════════════════════════════════ */
 const ChallengeBlock = ({ num, title, challenge, solution, color, delay }) => (
@@ -617,10 +710,32 @@ const Slide9 = ({ active }) => (
           <p style={{fontFamily:"'Inter',sans-serif",fontSize:11,fontWeight:300,color:C.slate,maxWidth:240,lineHeight:1.6,textAlign:"right",animation:"fadeIn .6s .3s ease both",opacity:0}}>Five engineering problems resolved with production-grade implementations.</p>
         </div>
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,flex:1,minHeight:0,overflow:"hidden"}}>
-          <ChallengeBlock delay={0.38} num={1} color={C.gold}    title="AI Credit Enforcement Without Latency"     challenge="Preventing free-tier AI overuse required a per-request gate without adding response latency."              solution="Atomic MongoDB findOneAndUpdate with $inc — single round-trip checks and decrements. Premium bypasses gate entirely."/>
-          <ChallengeBlock delay={0.56} num={2} color={C.goldlt}  title="Unauthenticated RSVP with Tamper Resistance" challenge="Guest RSVP pages needed to work without accounts while remaining securely linked to guest records."  solution="Opaque unique token per guest embedded in RSVP URL. Backend validates token against guest document — no session needed."/>
-          <ChallengeBlock delay={0.65} num={3} color="#A78BFA"   title="Shared State Across Multi-Tab Event View"    challenge="Five interconnected tabs needed changes in one (e.g. adding a guest) to reflect instantly in others." solution="React Context exposes shared event state. Mutations trigger targeted API calls and local updates without full re-fetches."/>
-          <ChallengeBlock delay={0.74} num={4} color="#E05C5C"   title="Secure Email Verification Flow"              challenge="Preventing account activation without valid email ownership, while keeping the UX frictionless."        solution="6-digit code generated server-side, stored hashed, expires in 15 min. Wrong code returns clear inline error — no account activated until correct."/>
+          <ChallengeBlock delay={0.65} num={1} color="#A78BFA"   title="Shared State Across Multi-Tab Event View"    challenge="Five interconnected tabs needed changes in one (e.g. adding a guest) to reflect instantly in others." solution="React Context exposes shared event state. Mutations trigger targeted API calls and local updates without full re-fetches."/>
+          <ChallengeBlock delay={0.74} num={2} color="#E05C5C"   title="Secure Email Verification Flow"              challenge="Preventing account activation without valid email ownership, while keeping the UX frictionless."        solution="6-digit code generated server-side, stored hashed, expires in 15 min. Wrong code returns clear inline error — no account activated until correct."/>
+        </div>
+      </>}
+    </div>
+  </div>
+);
+
+/* ══════════════════════════════════════════════════════════════════
+   SLIDE 1.5 — PROBLEM & SOLUTION
+══════════════════════════════════════════════════════════════════ */
+const SlideProblemSolution = ({ active }) => (
+  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",padding:"22px 40px",overflow:"hidden"}}>
+    <NoiseBg/>
+    <div style={{position:"relative",zIndex:1,display:"flex",flexDirection:"column",height:"100%"}}>
+      {active&&<>
+        <div style={{display:"flex",alignItems:"flex-end",justifyContent:"space-between",marginBottom:12,flexShrink:0}}>
+          <div>
+            <SLabel n={1.5} title="Problem Statement" delay={0.05}/>
+            <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:40,fontWeight:600,color:C.white,letterSpacing:"-0.01em",lineHeight:0.95,animation:"fadeUp .6s .15s ease both",opacity:0}}>The Problem &<br/><span className="gold-shimmer">Our Solution</span></h2>
+          </div>
+          <p style={{fontFamily:"'Inter',sans-serif",fontSize:11,fontWeight:300,color:C.slate,maxWidth:240,lineHeight:1.6,textAlign:"right",animation:"fadeIn .6s .3s ease both",opacity:0}}>Event planning is chaotic, unorganized, and time-consuming without the right tools.</p>
+        </div>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,flex:1,minHeight:0,overflow:"hidden"}}>
+          <ChallengeBlock delay={0.65} num={1} color={C.goldlt}   title="Event Planning Chaos"           challenge="Hosts juggle multiple spreadsheets, emails, and tools. No central source of truth for guests, budget, tasks, and timelines." solution="PlanIt brings everything into one beautiful, organized dashboard with real-time updates and AI-powered insights."/>
+          <ChallengeBlock delay={0.74} num={2} color={C.accent}   title="Guesswork & Manual Labor"       challenge="Estimating costs, sequencing tasks, and managing vendors requires hours of manual coordination and often leads to errors."        solution="AI assistant provides smart suggestions for budgets, timelines, and vendor recommendations based on event type and scale."/>
         </div>
       </>}
     </div>
@@ -631,29 +746,29 @@ const Slide9 = ({ active }) => (
    FEATURE IMAGE SLIDES
 ══════════════════════════════════════════════════════════════════ */
 const FeatureImageSlide = ({ title, img, active }) => (
-  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"28px 52px",gap:12,overflow:"hidden"}}>
+  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"22px 44px",gap:10,overflow:"hidden"}}>
     <NoiseBg/><GeoBg/>
     {active&&<>
       <div style={{textAlign:"center",animation:"fadeUp .6s .15s ease both",opacity:0}}>
         <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:36,fontWeight:600,color:C.white,letterSpacing:"-0.01em"}}>{title}</h2>
         <Rule delay={0.25} width={70}/>
       </div>
-      <img src={img} style={{maxWidth:"96%",maxHeight:"78%",borderRadius:14,border:`1px solid ${C.gold}30`,boxShadow:"0 16px 44px rgba(0,0,0,0.45)",animation:"fadeUp .6s .35s ease both",opacity:0,objectFit:"contain"}}/>
+      <img src={img} style={{maxWidth:"98%",maxHeight:"90%",borderRadius:14,border:`1px solid ${C.gold}30`,boxShadow:"0 18px 48px rgba(0,0,0,0.45)",animation:"fadeUp .6s .35s ease both",opacity:0,objectFit:"contain"}}/>
     </>}
   </div>
 );
 
 const FeatureQuadImageSlide = ({ title, images, active }) => (
-  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"28px 52px",gap:12,overflow:"hidden"}}>
+  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"22px 44px",gap:10,overflow:"hidden"}}>
     <NoiseBg/><GeoBg/>
     {active&&<>
       <div style={{textAlign:"center",animation:"fadeUp .6s .15s ease both",opacity:0}}>
         <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:36,fontWeight:600,color:C.white,letterSpacing:"-0.01em"}}>{title}</h2>
         <Rule delay={0.25} width={70}/>
       </div>
-      <div style={{width:"100%",maxWidth:1200,display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,animation:"fadeUp .6s .35s ease both",opacity:0}}>
+      <div style={{width:"100%",maxWidth:1280,display:"grid",gridTemplateColumns:"1fr 1fr",gap:14,animation:"fadeUp .6s .35s ease both",opacity:0}}>
         {images.map((src,i)=>(
-          <img key={i} src={src} style={{width:"100%",height:"100%",maxHeight:300,borderRadius:12,border:`1px solid ${C.gold}30`,boxShadow:"0 12px 32px rgba(0,0,0,0.4)",objectFit:"contain",background:"rgba(7,17,31,0.4)"}}/>
+          <img key={i} src={src} style={{width:"100%",height:"100%",maxHeight:380,borderRadius:12,border:`1px solid ${C.gold}30`,boxShadow:"0 14px 36px rgba(0,0,0,0.4)",objectFit:"contain",background:"rgba(7,17,31,0.4)"}}/>
         ))}
       </div>
     </>}
@@ -666,7 +781,6 @@ const ImgSlide3 = ({ active }) => <FeatureImageSlide active={active} title="Regi
 const ImgSlide4 = ({ active }) => <FeatureImageSlide active={active} title="Code Sent" img={enterCode}/>;
 const ImgSlide5 = ({ active }) => <FeatureImageSlide active={active} title="Wrong Code" img={wrongCode}/>;
 const ImgSlide6 = ({ active }) => <FeatureImageSlide active={active} title="Correct Code" img={correctCode}/>;
-const ImgSlide7 = ({ active }) => <FeatureImageSlide active={active} title="Dashboard" img={dashboard}/>;
 const ImgSlide8 = ({ active }) => <FeatureImageSlide active={active} title="Create Event" img={createEvent}/>;
 const ImgSlide9 = ({ active }) => <FeatureImageSlide active={active} title="Create Event Step 2" img={step2}/>;
 const ImgSlide10 = ({ active }) => <FeatureImageSlide active={active} title="AI Event Suggestion" img={summSug}/>;
@@ -705,16 +819,16 @@ const ImgSlide33 = ({ active }) => <FeatureImageSlide active={active} title="Not
 ══════════════════════════════════════════════════════════════════ */
 const SLIDES = [
   { id:0, label:"Introduction",    comp:Slide1 },
-  { id:1, label:"Target Users",    comp:Slide2 },
-  { id:2, label:"Tech Stack",      comp:Slide3 },
-  { id:3, label:"Website Flow",    comp:Slide4 },
-  { id:4, label:"Landing Page",    comp:ImgSlide1 },
-  { id:5, label:"Dashboard",       comp:ImgSlide2 },
+  { id:1, label:"Problem & Solution", comp:SlideProblemSolution },
+  { id:2, label:"Target Users",    comp:Slide2 },
+  { id:3, label:"Tech Stack",      comp:Slide3 },
+  { id:4, label:"Website Flow",    comp:Slide4 },
+  { id:5, label:"Landing Page",    comp:ImgSlide1 },
   { id:6, label:"Register",        comp:ImgSlide3 },
   { id:7, label:"Code Sent",       comp:ImgSlide4 },
   { id:8, label:"Wrong Code",      comp:ImgSlide5 },
   { id:9, label:"Correct Code",    comp:ImgSlide6 },
-  { id:10, label:"Dashboard",      comp:ImgSlide7 },
+  { id:10, label:"Dashboard",      comp:ImgSlide2 },
   { id:11, label:"Create Event",   comp:ImgSlide8 },
   { id:12, label:"Create Event Step 2", comp:ImgSlide9 },
   { id:13, label:"AI Event Suggestion", comp:ImgSlide10 },
@@ -742,7 +856,8 @@ const SLIDES = [
   { id:35, label:"Check-in",       comp:ImgSlide32 },
   { id:36, label:"Notifications", comp:ImgSlide33 },
   { id:37, label:"Additional",     comp:Slide8 },
-  { id:38, label:"Challenges",     comp:Slide9 },
+  { id:38, label:"Vendors & Planners", comp:Slide11 },
+  { id:39, label:"Challenges",     comp:Slide9 },
 ];
 
 export default function App() {

@@ -317,19 +317,19 @@ function TargetSlide({ active }) {
             opacity: show ? 1 : 0, transform: show ? "none" : "translateY(20px)",
             transition: `all 0.55s ease 1s`,
           }}>
-            <img src={profile} alt="User Profile" style={{ width: "100%", borderRadius: 10, border: `1px solid ${GOLD}40` }} />
+            <img src={profile} alt="User Profile" style={{ width: "100%", minHeight: "280px", borderRadius: 10, border: `1px solid ${GOLD}40`, objectFit: "cover" }} />
           </div>
           <div style={{
             opacity: show ? 1 : 0, transform: show ? "none" : "translateY(20px)",
             transition: `all 0.55s ease 1.1s`,
           }}>
-            <img src={pricing} alt="Pricing" style={{ width: "100%", borderRadius: 10, border: `1px solid ${TEAL}40` }} />
+            <img src={pricing} alt="Pricing" style={{ width: "100%", minHeight: "280px", borderRadius: 10, border: `1px solid ${TEAL}40`, objectFit: "cover" }} />
           </div>
           <div style={{
             opacity: show ? 1 : 0, transform: show ? "none" : "translateY(20px)",
             transition: `all 0.55s ease 1.2s`,
           }}>
-            <img src={settings} alt="Settings" style={{ width: "100%", borderRadius: 10, border: `1px solid #A78BFA40` }} />
+            <img src={settings} alt="Settings" style={{ width: "100%", minHeight: "280px", borderRadius: 10, border: `1px solid #A78BFA40`, objectFit: "cover" }} />
           </div>
         </div>
       </div>
@@ -506,13 +506,13 @@ function FlowSlide({ active }) {
             opacity: show ? 1 : 0, transform: show ? "none" : "translateX(-20px)",
             transition: `all 0.6s ease 1.2s`,
           }}>
-            <img src={createEvent} alt="Create Event" style={{ width: "100%", borderRadius: 12, border: `1px solid #A78BFA40` }} />
+            <img src={createEvent} alt="Create Event" style={{ width: "100%", minHeight: "300px", borderRadius: 12, border: `1px solid #A78BFA40`, objectFit: "cover" }} />
           </div>
           <div style={{
             opacity: show ? 1 : 0, transform: show ? "none" : "translateX(20px)",
             transition: `all 0.6s ease 1.3s`,
           }}>
-            <img src={eventsTab} alt="Events Tab" style={{ width: "100%", borderRadius: 12, border: `1px solid ${TEAL}40` }} />
+            <img src={eventsTab} alt="Events Tab" style={{ width: "100%", minHeight: "300px", borderRadius: 12, border: `1px solid ${TEAL}40`, objectFit: "cover" }} />
           </div>
         </div>
       </div>
@@ -520,7 +520,84 @@ function FlowSlide({ active }) {
   );
 }
 
-// SLIDE 5: Core Features
+// SLIDE 5: Dashboard
+function DashboardSlide({ active }) {
+  const [show, setShow] = useState(false);
+  useEffect(() => { if (active) setTimeout(() => setShow(true), 100); else setShow(false); }, [active]);
+
+  const metrics = [
+    { label: "Total Guests", value: "142", color: TEAL, icon: "👥" },
+    { label: "Budget Used", value: "68%", color: GOLD, icon: "💰" },
+    { label: "Tasks Done", value: "12/15", color: "#F97316", icon: "✅" },
+    { label: "Timeline", value: "On Track", color: "#A78BFA", icon: "⏱️" },
+  ];
+
+  return (
+    <div style={{ width: "100%", height: "100%", background: NAVY, position: "relative", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px 60px", overflow: "hidden" }}>
+      <GridLines />
+      <GlowOrb x="70%" y="30%" color={GOLD} size={320} opacity={0.1} />
+      <GlowOrb x="-40px" y="60%" color={TEAL} size={280} opacity={0.09} />
+
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <div style={{ opacity: show ? 1 : 0, transition: "all 0.5s ease 0.1s", marginBottom: 8 }}>
+          <Tag color={GOLD}>05 — Event Dashboard</Tag>
+        </div>
+        <h2 style={{
+          fontFamily: "'Playfair Display', serif", fontSize: 44, fontWeight: 800,
+          color: WHITE, margin: "0 0 28px", letterSpacing: "-0.02em",
+          opacity: show ? 1 : 0, transition: "all 0.5s ease 0.2s",
+        }}>Real-Time <span style={{ color: GOLD }}>Dashboard</span></h2>
+        <p style={{ color: SLATE, fontSize: 15, margin: "0 0 32px", opacity: show ? 1 : 0, transition: "all 0.5s ease 0.3s" }}>
+          Central hub for event hosts — monitor guests, budget, tasks, and timeline progress at a glance. Live updates ensure you're always in control.
+        </p>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 28 }}>
+          {metrics.map((m, i) => (
+            <div key={i} style={{
+              opacity: show ? 1 : 0, transform: show ? "none" : "translateY(25px)",
+              transition: `all 0.55s ease ${0.3 + i * 0.09}s`,
+            }}>
+              <Card style={{ textAlign: "center" }}>
+                <div style={{ fontSize: 32, marginBottom: 12 }}>{m.icon}</div>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, fontWeight: 700, color: m.color, marginBottom: 6 }}>{m.value}</div>
+                <div style={{ fontSize: 12, color: SLATE, letterSpacing: "0.06em", textTransform: "uppercase" }}>{m.label}</div>
+              </Card>
+            </div>
+          ))}
+        </div>
+
+        <div style={{
+          opacity: show ? 1 : 0, transform: show ? "none" : "translateY(20px)",
+          transition: `all 0.55s ease 1s`,
+        }}>
+          <img src={dashboard} alt="Dashboard" style={{ width: "100%", minHeight: "320px", borderRadius: 12, border: `1px solid ${GOLD}40`, objectFit: "cover" }} />
+        </div>
+
+        <div style={{
+          marginTop: 20, display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 12,
+          opacity: show ? 1 : 0, transition: "all 0.5s ease 1.2s",
+        }}>
+          {[
+            "Live guest count & RSVP status",
+            "Budget breakdown by category",
+            "Checklist completion progress",
+            "Day-of timeline milestones"
+          ].map((t, i) => (
+            <div key={i} style={{
+              padding: "10px 14px", borderRadius: 8,
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              fontSize: 12, color: SLATE, fontFamily: "'DM Sans', sans-serif",
+              textAlign: "center"
+            }}>✦ {t}</div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// SLIDE 6: Core Features
 function FeaturesSlide({ active }) {
   const [show, setShow] = useState(false);
   useEffect(() => { if (active) setTimeout(() => setShow(true), 100); else setShow(false); }, [active]);
@@ -544,7 +621,7 @@ function FeaturesSlide({ active }) {
 
       <div style={{ position: "relative", zIndex: 1 }}>
         <div style={{ opacity: show ? 1 : 0, transition: "all 0.5s ease 0.1s", marginBottom: 8 }}>
-          <Tag color={GOLD}>05 — Core Capabilities</Tag>
+          <Tag color={GOLD}>06 — Core Capabilities</Tag>
         </div>
         <h2 style={{
           fontFamily: "'Playfair Display', serif", fontSize: 44, fontWeight: 800,
@@ -577,25 +654,25 @@ function FeaturesSlide({ active }) {
             opacity: show ? 1 : 0, transform: show ? "none" : "translateY(25px)",
             transition: `all 0.55s ease 0.8s`,
           }}>
-            <img src={dashboard} alt="Dashboard" style={{ width: "100%", borderRadius: 10, border: `1px solid ${GOLD}40` }} />
+            <img src={dashboard} alt="Dashboard" style={{ width: "100%", minHeight: "200px", borderRadius: 10, border: `1px solid ${GOLD}40`, objectFit: "cover" }} />
           </div>
           <div style={{
             opacity: show ? 1 : 0, transform: show ? "none" : "translateY(25px)",
             transition: `all 0.55s ease 0.9s`,
           }}>
-            <img src={expense} alt="Budget Expense" style={{ width: "100%", borderRadius: 10, border: `1px solid #F9731640` }} />
+            <img src={expense} alt="Budget Expense" style={{ width: "100%", minHeight: "200px", borderRadius: 10, border: `1px solid #F9731640`, objectFit: "cover" }} />
           </div>
           <div style={{
             opacity: show ? 1 : 0, transform: show ? "none" : "translateY(25px)",
             transition: `all 0.55s ease 1s`,
           }}>
-            <img src={rsvp} alt="RSVP Page" style={{ width: "100%", borderRadius: 10, border: `1px solid ${TEAL}40` }} />
+            <img src={rsvp} alt="RSVP Page" style={{ width: "100%", minHeight: "200px", borderRadius: 10, border: `1px solid ${TEAL}40`, objectFit: "cover" }} />
           </div>
           <div style={{
             opacity: show ? 1 : 0, transform: show ? "none" : "translateY(25px)",
             transition: `all 0.55s ease 1.1s`,
           }}>
-            <img src={timeline} alt="Timeline" style={{ width: "100%", borderRadius: 10, border: `1px solid #A78BFA40` }} />
+            <img src={timeline} alt="Timeline" style={{ width: "100%", minHeight: "200px", borderRadius: 10, border: `1px solid #A78BFA40`, objectFit: "cover" }} />
           </div>
         </div>
       </div>
@@ -632,7 +709,7 @@ function AISlide({ active }) {
 
       <div style={{ position: "relative", zIndex: 1 }}>
         <div style={{ opacity: show ? 1 : 0, transition: "all 0.5s ease 0.1s", marginBottom: 8 }}>
-          <Tag color="#A78BFA">06 — Artificial Intelligence</Tag>
+          <Tag color="#A78BFA">07 — Artificial Intelligence</Tag>
         </div>
         <div style={{ display: "flex", alignItems: "baseline", gap: 16, marginBottom: 8 }}>
           <h2 style={{
@@ -674,19 +751,19 @@ function AISlide({ active }) {
             opacity: show ? 1 : 0, transform: show ? "none" : "translateY(20px)",
             transition: `all 0.55s ease 1.1s`,
           }}>
-            <img src={aiChatbot} alt="AI Chatbot" style={{ width: "100%", borderRadius: 10, border: `1px solid #A78BFA40` }} />
+            <img src={aiChatbot} alt="AI Chatbot" style={{ width: "100%", minHeight: "240px", borderRadius: 10, border: `1px solid #A78BFA40`, objectFit: "cover" }} />
           </div>
           <div style={{
             opacity: show ? 1 : 0, transform: show ? "none" : "translateY(20px)",
             transition: `all 0.55s ease 1.2s`,
           }}>
-            <img src={aiSugg} alt="AI Suggestions" style={{ width: "100%", borderRadius: 10, border: `1px solid #A78BFA40` }} />
+            <img src={aiSugg} alt="AI Suggestions" style={{ width: "100%", minHeight: "240px", borderRadius: 10, border: `1px solid #A78BFA40`, objectFit: "cover" }} />
           </div>
           <div style={{
             opacity: show ? 1 : 0, transform: show ? "none" : "translateY(20px)",
             transition: `all 0.55s ease 1.3s`,
           }}>
-            <img src={aiChecklist} alt="AI Checklist" style={{ width: "100%", borderRadius: 10, border: `1px solid #A78BFA40` }} />
+            <img src={aiChecklist} alt="AI Checklist" style={{ width: "100%", minHeight: "240px", borderRadius: 10, border: `1px solid #A78BFA40`, objectFit: "cover" }} />
           </div>
         </div>
 
@@ -727,7 +804,7 @@ function AdditionalSlide({ active }) {
 
       <div style={{ position: "relative", zIndex: 1 }}>
         <div style={{ opacity: show ? 1 : 0, transition: "all 0.5s ease 0.1s", marginBottom: 8 }}>
-          <Tag color={TEAL}>07 — Security & UX</Tag>
+          <Tag color={TEAL}>08 — Security & UX</Tag>
         </div>
         <h2 style={{
           fontFamily: "'Playfair Display', serif", fontSize: 44, fontWeight: 800,
@@ -761,25 +838,13 @@ function ChallengesSlide({ active }) {
 
   const challenges = [
     {
-      num: "01", color: GOLD,
-      challenge: "AI Credit & Usage Tracking",
-      problem: "Preventing unlimited free AI calls without throttling performance or adding database overhead per request.",
-      solution: "Per-user credit counter stored in MongoDB, decremented atomically per AI call — premium accounts bypass the check entirely.",
-    },
-    {
-      num: "02", color: TEAL,
-      challenge: "Zero-Install Demo Mode",
-      problem: "Demos required MongoDB, making it hard for reviewers to test quickly without environment setup.",
-      solution: "Integrated in-memory MongoDB (mongodb-memory-server) with auto-seeding — full platform, no install required.",
-    },
-    {
-      num: "03", color: "#A78BFA",
+      num: "01", color: "#A78BFA",
       challenge: "Real-Time RSVP & QR Check-In",
       problem: "Public RSVP pages needed to work without auth, while still securely updating the guest's status in the system.",
       solution: "Unique guest ID tokens in URLs + QR codes — stateless, tamper-resistant, no login needed for guests.",
     },
     {
-      num: "04", color: "#F97316",
+      num: "02", color: "#F97316",
       challenge: "Complex State Across Event Tabs",
       problem: "Event detail page has 5+ tabs (Guests, Budget, Checklist, AI, Timeline) — keeping state in sync without prop drilling.",
       solution: "Context-driven architecture with React hooks, each tab fetching only what it needs with optimistic UI updates.",
@@ -794,7 +859,7 @@ function ChallengesSlide({ active }) {
 
       <div style={{ position: "relative", zIndex: 1 }}>
         <div style={{ opacity: show ? 1 : 0, transition: "all 0.5s ease 0.1s", marginBottom: 8 }}>
-          <Tag color="#F97316">08 — Problem Solving</Tag>
+          <Tag color="#F97316">09 — Problem Solving</Tag>
         </div>
         <h2 style={{
           fontFamily: "'Playfair Display', serif", fontSize: 44, fontWeight: 800,
@@ -838,8 +903,87 @@ function ChallengesSlide({ active }) {
   );
 }
 
-const slideComponents = [IntroSlide, TargetSlide, TechStackSlide, FlowSlide, FeaturesSlide, AISlide, AdditionalSlide, ChallengesSlide];
-const slideTitles = ["Introduction", "Target Users", "Tech Stack", "Website Flow", "Core Features", "AI Features", "Additional Features", "Challenges"];
+// SLIDE 10: Vendors & Event Planners
+function VendorsSlide({ active }) {
+  const [show, setShow] = useState(false);
+  useEffect(() => { if (active) setTimeout(() => setShow(true), 100); else setShow(false); }, [active]);
+
+  const features = [
+    { icon: "📋", title: "Vendor Directory", desc: "Browse curated vendors with reviews, pricing, and availability", color: GOLD },
+    { icon: "🔐", title: "Role-Based Access", desc: "Multi-tier permissions: vendors, planners, co-hosts with granular controls", color: TEAL },
+    { icon: "✉️", title: "RSVP Templates", desc: "Beautiful, customizable email templates for guest invitations", color: "#F97316" },
+    { icon: "📱", title: "Mobile App", desc: "Native iOS/Android apps for on-the-go event management and guest updates", color: "#A78BFA" },
+    { icon: "🤝", title: "Vendor Collaboration", desc: "Direct messaging and file sharing between planners and vendors", color: GOLD },
+    { icon: "📅", title: "Availability Calendar", desc: "Real-time vendor availability and booking integration", color: TEAL },
+  ];
+
+  return (
+    <div style={{ width: "100%", height: "100%", background: NAVY, position: "relative", display: "flex", flexDirection: "column", justifyContent: "center", padding: "40px 60px", overflow: "hidden" }}>
+      <GridLines />
+      <GlowOrb x="30%" y="-60px" color="#A78BFA" size={350} opacity={0.1} />
+      <GlowOrb x="80%" y="70%" color={GOLD} size={300} opacity={0.09} />
+
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <div style={{ opacity: show ? 1 : 0, transition: "all 0.5s ease 0.1s", marginBottom: 8 }}>
+          <Tag color="#A78BFA">10 — Future Growth</Tag>
+        </div>
+        <h2 style={{
+          fontFamily: "'Playfair Display', serif", fontSize: 44, fontWeight: 800,
+          color: WHITE, margin: "0 0 28px", letterSpacing: "-0.02em",
+          opacity: show ? 1 : 0, transition: "all 0.5s ease 0.2s",
+        }}>Vendors & Event <span style={{ color: GOLD }}>Planners</span></h2>
+        <p style={{ color: SLATE, fontSize: 15, margin: "0 0 28px", opacity: show ? 1 : 0, transition: "all 0.5s ease 0.3s" }}>
+          Extend PlanIt's ecosystem with vendor discovery, role-based team collaboration, professional RSVP templates, and mobile-first tools for planners on the go.
+        </p>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+          {features.map((f, i) => (
+            <div key={i} style={{
+              opacity: show ? 1 : 0, transform: show ? "none" : "translateY(25px)",
+              transition: `all 0.55s ease ${0.35 + i * 0.08}s`,
+            }}>
+              <Card glint style={{ borderTop: `2px solid ${f.color}30` }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+                  <span style={{ fontSize: 24 }}>{f.icon}</span>
+                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 700, color: f.color }}>{f.title}</span>
+                </div>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12.5, color: SLATE, margin: 0, lineHeight: 1.55 }}>{f.desc}</p>
+              </Card>
+            </div>
+          ))}
+        </div>
+
+        <div style={{
+          marginTop: 28, padding: "18px 24px",
+          background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
+          borderLeft: `3px solid #A78BFA`,
+          borderRadius: 12,
+          opacity: show ? 1 : 0, transition: "all 0.5s ease 1.2s",
+        }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: SLATE, margin: 0, lineHeight: 1.6 }}>
+            <span style={{ color: "#A78BFA", fontWeight: 700 }}>Vision:</span> Transform PlanIt from a solo-planner tool into a comprehensive event ecosystem where hosts, professional planners, and vendors collaborate seamlessly — creating a unified platform for events of any scale.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const slideComponents = [IntroSlide, TargetSlide, TechStackSlide, FlowSlide, DashboardSlide, FeaturesSlide, AISlide, AdditionalSlide, ChallengesSlide, VendorsSlide];
+const slideTitles = ["Introduction", "Target Users", "Tech Stack", "Website Flow", "Dashboard", "Features", "AI Features", "Additional", "Challenges", "Vendors"];
+
+const slides = [
+  { id: 1, type: "intro" },
+  { id: 2, type: "target" },
+  { id: 3, type: "techstack" },
+  { id: 4, type: "flow" },
+  { id: 5, type: "dashboard" },
+  { id: 6, type: "features" },
+  { id: 7, type: "ai" },
+  { id: 8, type: "additional" },
+  { id: 9, type: "challenges" },
+  { id: 10, type: "vendors" },
+];
 
 export default function Presentation() {
   const [current, setCurrent] = useState(0);
