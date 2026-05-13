@@ -18,6 +18,25 @@ import aiTabResult from "./assets/AI-tab-result.png";
 import pricing from "./assets/pricing.png";
 import correctCode from "./assets/correct-code.png";
 import eventsTab from "./assets/events-tab.png";
+import profile from "./assets/profile.png";
+import settings from "./assets/settings.png";
+import calendar from "./assets/calander.png";
+import upgradePlan from "./assets/upgrade-plan.png";
+import step2 from "./assets/step-2.png";
+import landingPage from "./assets/landing page.png";
+import eventSumm from "./assets/event-summ.png";
+import aiAssistantPage from "./assets/AI-assistant-page.png";
+import monthlyPrice from "./assets/monthly-price.png";
+import fillPriceForm from "./assets/fill-price-form.png";
+import faqPricing from "./assets/faq-pricing.png";
+import upgraded from "./assets/upgraded.png";
+import rsvpLanding from "./assets/rsvp-landing.png";
+import dateCountDown from "./assets/date-count-down.png";
+import acceptDecline from "./assets/accept-decline.png";
+import inRsvpMap from "./assets/in-rsvp-map.png";
+import checkinAtten from "./assets/checkin-atten.png";
+import notiSystem from "./assets/noti-system.png";
+import calander from "./assets/calander.png";
 
 const C = {
   navy:    "#07111F",
@@ -151,6 +170,9 @@ const Slide1 = ({ active }) => (
             </div>
           ))}
         </div>
+        <div style={{marginTop:16,fontFamily:"'Inter',sans-serif",fontSize:13,letterSpacing:"0.08em",color:C.slatel,animation:"fadeUp .6s .9s ease both",opacity:0}}>
+          Raneem Bikai | Digital Hub UNRWA | 14-5-2026
+        </div>
       </>}
     </div>
   </div>
@@ -251,22 +273,21 @@ const Slide3 = ({ active }) => (
    SLIDE 4 — WEBSITE FLOW (Three.js animated)
 ══════════════════════════════════════════════════════════════════ */
 const FLOW_STEPS = [
-  { id:0,  label:"Landing Page",      detail:"Public homepage — value proposition, features, pricing. No auth required.",                                                  sub:["Hero & CTA","Feature overview","Pricing tiers","Demo access"] },
-  { id:1,  label:"Register",          detail:"User creates an account. A unique verification code is sent to their email immediately after submission.",                     sub:["Name, email, password","Verification code dispatched","Code expires in 15 min","Wrong code → clear error shown"] },
-  { id:2,  label:"Email Verification",detail:"User enters the 6-digit code received by email. Incorrect code shows an inline error. Correct code activates the account.",   sub:["6-digit code input","Wrong code → error state","Correct code → account active","Resend code option"] },
-  { id:3,  label:"Login",             detail:"Authenticated sign-in. JWT token issued on success and stored client-side for all subsequent API calls.",                     sub:["Email & password","JWT token issued","7-day session","Role assignment"] },
-  { id:4,  label:"Dashboard",         detail:"Central hub with live stats: total guests, RSVP counts, budget remaining, task completion, and notifications.",               sub:["Event summary cards","Live stats","Notification center","Quick-create event"] },
-  { id:5,  label:"Create Event",      detail:"Guided wizard: event name, type, date, location, guest count, and initial budget cap.",                                       sub:["Name & type","Date & location","Guest estimate","Budget cap"] },
-  { id:6,  label:"Guest Management",  detail:"Add or import guests, assign to groups, record dietary/access needs, and track per-guest RSVP status in real-time.",         sub:["Add / import guests","Group assignment","Dietary notes","RSVP status tracking"] },
-  { id:7,  label:"RSVP Dispatch",     detail:"Each guest receives a unique token-protected URL and QR code. No account required for the guest to respond.",                 sub:["Unique token URL","Email dispatch","QR code generation","Public RSVP page"] },
-  { id:8,  label:"Budget & Expenses", detail:"Itemized expense tracker with category breakdown. Real-time actual vs. estimated spend with automatic overage alerts.",       sub:["Expense line items","Category breakdown","Actual vs estimate","Overspend alerts"] },
-  { id:9,  label:"Checklist",         detail:"AI-generated task list based on event type. Tasks carry due dates, assignees, and completion status — tracked on dashboard.", sub:["AI task generation","Due dates","Assignees","Progress tracking"] },
-  { id:10, label:"Seating Planner",   detail:"Visual table layout tool. Assign guests to tables, manage group preferences, and export the finalized seating chart.",        sub:["Table layout builder","Assign guests","Group logic","Export chart"] },
-  { id:11, label:"Timeline Builder",  detail:"Day-of schedule with ordered milestones, time slots, and responsible parties. Used as the operational runsheet.",             sub:["Milestone entries","Time slots","Responsible party","Day-of runsheet"] },
-  { id:12, label:"AI Insights",       detail:"OpenRouter analysis runs across event data — budget risk, planning gaps, overdue tasks, and smart recommendations.",          sub:["Budget risk flags","Gap detection","Overdue alerts","Recommendations"] },
-  { id:13, label:"QR Check-In",       detail:"Guests show QR code at entry. Host scans live. Real-time attendance counter updates instantly on the dashboard.",             sub:["QR per guest","Live scan","Real-time counter","Attendance report"] },
-  { id:14, label:"Analytics",         detail:"Post-event: final attendance rate, budget variance, checklist score, and AI performance summary.",                           sub:["Attendance rate","Budget variance","Checklist score","AI summary"] },
-  { id:15, label:"Premium & Billing", detail:"Free tier has credit-limited AI. Premium unlocks unlimited AI, advanced analytics, and white-label RSVP pages.",             sub:["AI credits","Unlimited premium","In-app upgrade","Billing management"] },
+  { id:0,  label:"Landing Page",        detail:"Public homepage — value proposition, features, pricing. No auth required.",                          sub:["Hero & CTA","Features","Pricing"] },
+  { id:1,  label:"Register",            detail:"User creates account with email and password. Verification code dispatched to email.",                  sub:["Email & password","Code sent","Account setup"] },
+  { id:2,  label:"Email Verification", detail:"User enters 6-digit code. Correct code activates account instantly.",                              sub:["Code input","Validation","Account active"] },
+  { id:3,  label:"Login",               detail:"JWT token issued on successful login. Stored for authenticated API access.",                       sub:["Sign-in","JWT token","Session start"] },
+  { id:4,  label:"Dashboard",           detail:"Central hub with event overview, stats, and quick navigation.",                                   sub:["Event stats","Quick actions","Notifications"] },
+  { id:5,  label:"Create Event",        detail:"Guided wizard: name, type, date, location, guests, and budget.",                                 sub:["Event setup","Details","Initial config"] },
+  { id:6,  label:"Guests",              detail:"Add, import, and manage guest list with groups and dietary info.",                                 sub:["Guest import","Groups","Details"] },
+  { id:7,  label:"Seating",             detail:"Assign guests to tables with visual layout builder.",                                             sub:["Table layout","Assignments","Export"] },
+  { id:8,  label:"Timeline",            detail:"Create day-of schedule with milestones, time slots, and responsible parties.",                    sub:["Milestones","Timings","Runsheet"] },
+  { id:9,  label:"Checklist",           detail:"AI-generated tasks with due dates, assignees, and progress tracking.",                           sub:["Task generation","Due dates","Progress"] },
+  { id:10, label:"Budget & Expense",    detail:"Itemized expense tracker with category breakdown and overspend alerts.",                        sub:["Expenses","Categories","Alerts"] },
+  { id:11, label:"AI Assistant",        detail:"Global chat interface for event-related questions and instant answers.",                        sub:["Chat","Context","Answers"] },
+  { id:12, label:"Credits & Premium",   detail:"Free tier with limited AI credits. Upgrade monthly or yearly for unlimited access.",            sub:["Credit system","Monthly/yearly","Unlimited AI"] },
+  { id:13, label:"RSVP & QR",           detail:"Guests receive token-protected RSVP links and QR codes. No account required.",                  sub:["RSVP link","QR code","Check-in"] },
+  { id:14, label:"Google Maps",         detail:"Location visualization, directions, and venue information integrated.",                        sub:["Location","Directions","Venue info"] },
 ];
 
 const Slide4 = ({ active }) => {
@@ -368,18 +389,7 @@ const Slide4 = ({ active }) => {
               ))}
             </div>
 
-            {/* Active glow indicator */}
-            <div style={{
-              position:"absolute",
-              left:`calc(12% + ${((activePos.x - 12) / 76) * 76}%)`,
-              top:`calc(10% + ${((activePos.y - 10) / 80) * 78}%)`,
-              width:28,height:28,borderRadius:"50%",
-              border:`1px solid ${C.gold}`,
-              boxShadow:"0 0 14px rgba(184,151,90,0.35)",
-              transform:"translate(-50%,-50%)",
-              transition:"left .45s cubic-bezier(.22,1,.36,1), top .45s cubic-bezier(.22,1,.36,1)",
-              zIndex:3,pointerEvents:"none"
-            }}/>
+
 
             <div style={{position:"absolute",bottom:10,left:14,fontFamily:"'Inter',sans-serif",fontSize:8,color:C.slate,letterSpacing:"0.09em",textTransform:"uppercase"}}>Click any node · Use Prev/Next</div>
           </div>
@@ -560,12 +570,12 @@ const Slide8 = ({ active }) => (
       {active&&<>
         <AddRow delay={0.35} title="JWT Authentication"          desc="Stateless token-based auth with 7-day expiry. Validated server-side on every protected API route."/>
         <AddRow delay={0.42} title="Email Verification"          desc="6-digit code sent on registration. Wrong code returns an inline error. Account activates only on correct entry."/>
-        <AddRow delay={0.49} title="Role-Based Access Control"   desc="Three tiers: admin, event host, guest. Each restricted to authorized API endpoints and UI surfaces at middleware level."/>
-        <AddRow delay={0.56} title="Responsive Interface"        desc="Full mobile and tablet support across all screens — dashboard, event management, RSVP, and QR check-in."/>
-        <AddRow delay={0.63} title="In-App Notification System"  desc="Persistent notification store per user. RSVP confirmations, task due dates, and AI insights trigger alerts."/>
-        <AddRow delay={0.70} title="Zero-Install Demo Mode"      desc="In-memory MongoDB with seeded demo account. Full platform, zero database setup required."/>
-        <AddRow delay={0.77} title="End-to-End Test Suite"       desc="Cypress tests covering registration, event creation, RSVP, and AI flows with reproducible seed data."/>
-        <AddRow delay={0.84} title="Environment Isolation"       desc="All secrets via dotenv, never committed. Separate .env schemas for frontend and backend with .env.example files."/>
+        <AddRow delay={0.49} title="Responsive Interface"        desc="Full mobile and tablet support across all screens — dashboard, event management, RSVP, and QR check-in."/>
+        <AddRow delay={0.56} title="In-App Notification System"  desc="Persistent notification store per user. RSVP confirmations, task due dates, and AI insights trigger alerts."/>
+        <AddRow delay={0.63} title="End-to-End Test Suite"       desc="Cypress tests covering registration, event creation, RSVP, and AI flows with reproducible seed data."/>
+        <AddRow delay={0.70} title="Environment Isolation"       desc="All secrets via dotenv, never committed. Separate .env schemas for frontend and backend with .env.example files."/>
+        <AddRow delay={0.77} title="Google Maps Integration"     desc="Location visualization with directions, venue info, and map-based planning for events."/>
+        <AddRow delay={0.84} title="Premium Billing System"      desc="Flexible subscription tiers with monthly or yearly options. Automated payment processing and credit management."/>
       </>}
     </div>
   </div>
@@ -618,6 +628,79 @@ const Slide9 = ({ active }) => (
 );
 
 /* ══════════════════════════════════════════════════════════════════
+   FEATURE IMAGE SLIDES
+══════════════════════════════════════════════════════════════════ */
+const FeatureImageSlide = ({ title, img, active }) => (
+  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"28px 52px",gap:12,overflow:"hidden"}}>
+    <NoiseBg/><GeoBg/>
+    {active&&<>
+      <div style={{textAlign:"center",animation:"fadeUp .6s .15s ease both",opacity:0}}>
+        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:36,fontWeight:600,color:C.white,letterSpacing:"-0.01em"}}>{title}</h2>
+        <Rule delay={0.25} width={70}/>
+      </div>
+      <img src={img} style={{maxWidth:"96%",maxHeight:"78%",borderRadius:14,border:`1px solid ${C.gold}30`,boxShadow:"0 16px 44px rgba(0,0,0,0.45)",animation:"fadeUp .6s .35s ease both",opacity:0,objectFit:"contain"}}/>
+    </>}
+  </div>
+);
+
+const FeatureQuadImageSlide = ({ title, images, active }) => (
+  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"28px 52px",gap:12,overflow:"hidden"}}>
+    <NoiseBg/><GeoBg/>
+    {active&&<>
+      <div style={{textAlign:"center",animation:"fadeUp .6s .15s ease both",opacity:0}}>
+        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:36,fontWeight:600,color:C.white,letterSpacing:"-0.01em"}}>{title}</h2>
+        <Rule delay={0.25} width={70}/>
+      </div>
+      <div style={{width:"100%",maxWidth:1200,display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,animation:"fadeUp .6s .35s ease both",opacity:0}}>
+        {images.map((src,i)=>(
+          <img key={i} src={src} style={{width:"100%",height:"100%",maxHeight:300,borderRadius:12,border:`1px solid ${C.gold}30`,boxShadow:"0 12px 32px rgba(0,0,0,0.4)",objectFit:"contain",background:"rgba(7,17,31,0.4)"}}/>
+        ))}
+      </div>
+    </>}
+  </div>
+);
+
+const ImgSlide1 = ({ active }) => <FeatureImageSlide active={active} title="Landing Page (video background)" img={landingPage}/>;
+const ImgSlide2 = ({ active }) => <FeatureImageSlide active={active} title="Dashboard" img={dashboard}/>;
+const ImgSlide3 = ({ active }) => <FeatureImageSlide active={active} title="Register" img={reg}/>;
+const ImgSlide4 = ({ active }) => <FeatureImageSlide active={active} title="Code Sent" img={enterCode}/>;
+const ImgSlide5 = ({ active }) => <FeatureImageSlide active={active} title="Wrong Code" img={wrongCode}/>;
+const ImgSlide6 = ({ active }) => <FeatureImageSlide active={active} title="Correct Code" img={correctCode}/>;
+const ImgSlide7 = ({ active }) => <FeatureImageSlide active={active} title="Dashboard" img={dashboard}/>;
+const ImgSlide8 = ({ active }) => <FeatureImageSlide active={active} title="Create Event" img={createEvent}/>;
+const ImgSlide9 = ({ active }) => <FeatureImageSlide active={active} title="Create Event Step 2" img={step2}/>;
+const ImgSlide10 = ({ active }) => <FeatureImageSlide active={active} title="AI Event Suggestion" img={summSug}/>;
+const ImgSlide11 = ({ active }) => <FeatureImageSlide active={active} title="AI Suggestions" img={aiSugg}/>;
+const ImgSlide12 = ({ active }) => <FeatureImageSlide active={active} title="Event Summary" img={eventSumm}/>;
+const ImgSlide13 = ({ active }) => <FeatureImageSlide active={active} title="Guests" img={eventsTab}/>;
+const ImgSlide14 = ({ active }) => <FeatureImageSlide active={active} title="Seating" img={autoAssign}/>;
+const ImgSlide15 = ({ active }) => <FeatureImageSlide active={active} title="Timeline" img={timeline}/>;
+const ImgSlide16 = ({ active }) => <FeatureImageSlide active={active} title="Budget & Expense" img={expense}/>;
+const ImgSlide17 = ({ active }) => <FeatureImageSlide active={active} title="Checklist" img={aiChecklist}/>;
+const ImgSlide18 = ({ active }) => <FeatureImageSlide active={active} title="AI Tab" img={aiTab}/>;
+const ImgSlide19 = ({ active }) => <FeatureImageSlide active={active} title="AI Tab Results" img={aiTabResult}/>;
+const ImgSlide20 = ({ active }) => <FeatureImageSlide active={active} title="AI Chatbot" img={aiChatbot}/>;
+const ImgSlide21 = ({ active }) => <FeatureImageSlide active={active} title="Calendar" img={calendar}/>;
+const ImgSlide22 = ({ active }) => <FeatureImageSlide active={active} title="AI Assistant Page" img={aiAssistantPage}/>;
+const ImgSlide23 = ({ active }) => <FeatureImageSlide active={active} title="Monthly Pricing" img={monthlyPrice}/>;
+const ImgSlide24 = ({ active }) => <FeatureImageSlide active={active} title="Fill Pricing Details" img={fillPriceForm}/>;
+const ImgSlide25 = ({ active }) => <FeatureImageSlide active={active} title="Pricing FAQ" img={faqPricing}/>;
+const ImgSlide26 = ({ active }) => <FeatureImageSlide active={active} title="Pricing" img={pricing}/>;
+const ImgSlide27 = ({ active }) => <FeatureImageSlide active={active} title="Upgraded" img={upgraded}/>;
+const ImgSlide28 = ({ active }) => <FeatureImageSlide active={active} title="Profile" img={profile}/>;
+const ImgSlide29 = ({ active }) => <FeatureImageSlide active={active} title="Settings" img={settings}/>;
+const ImgSlide30 = ({ active }) => (
+  <FeatureQuadImageSlide
+    active={active}
+    title="RSVP Flow"
+    images={[rsvpLanding, dateCountDown, acceptDecline, inRsvpMap]}
+  />
+);
+const ImgSlide31 = ({ active }) => <FeatureImageSlide active={active} title="Accept RSVP" img={acceptRsvp}/>;
+const ImgSlide32 = ({ active }) => <FeatureImageSlide active={active} title="Check-in Attendance" img={checkinAtten}/>;
+const ImgSlide33 = ({ active }) => <FeatureImageSlide active={active} title="Notification System" img={notiSystem}/>;
+
+/* ══════════════════════════════════════════════════════════════════
    ROOT APP
 ══════════════════════════════════════════════════════════════════ */
 const SLIDES = [
@@ -625,11 +708,41 @@ const SLIDES = [
   { id:1, label:"Target Users",    comp:Slide2 },
   { id:2, label:"Tech Stack",      comp:Slide3 },
   { id:3, label:"Website Flow",    comp:Slide4 },
-  { id:4, label:"Auth & Verify",   comp:Slide5 },
-  { id:5, label:"Core Features",   comp:Slide6 },
-  { id:6, label:"AI Features",     comp:Slide7 },
-  { id:7, label:"Additional",      comp:Slide8 },
-  { id:8, label:"Challenges",      comp:Slide9 },
+  { id:4, label:"Landing Page",    comp:ImgSlide1 },
+  { id:5, label:"Dashboard",       comp:ImgSlide2 },
+  { id:6, label:"Register",        comp:ImgSlide3 },
+  { id:7, label:"Code Sent",       comp:ImgSlide4 },
+  { id:8, label:"Wrong Code",      comp:ImgSlide5 },
+  { id:9, label:"Correct Code",    comp:ImgSlide6 },
+  { id:10, label:"Dashboard",      comp:ImgSlide7 },
+  { id:11, label:"Create Event",   comp:ImgSlide8 },
+  { id:12, label:"Create Event Step 2", comp:ImgSlide9 },
+  { id:13, label:"AI Event Suggestion", comp:ImgSlide10 },
+  { id:14, label:"AI Suggestions", comp:ImgSlide11 },
+  { id:15, label:"Event Summary",  comp:ImgSlide12 },
+  { id:16, label:"Guests",         comp:ImgSlide13 },
+  { id:17, label:"Seating",        comp:ImgSlide14 },
+  { id:18, label:"Timeline",       comp:ImgSlide15 },
+  { id:19, label:"Budget & Expense", comp:ImgSlide16 },
+  { id:20, label:"Checklist",      comp:ImgSlide17 },
+  { id:21, label:"AI Tab",         comp:ImgSlide18 },
+  { id:22, label:"AI Tab Results", comp:ImgSlide19 },
+  { id:23, label:"AI Chatbot",     comp:ImgSlide20 },
+  { id:24, label:"Calendar",       comp:ImgSlide21 },
+  { id:25, label:"AI Assistant Page", comp:ImgSlide22 },
+  { id:26, label:"Monthly Pricing", comp:ImgSlide23 },
+  { id:27, label:"Fill Pricing",   comp:ImgSlide24 },
+  { id:28, label:"Pricing FAQ",    comp:ImgSlide25 },
+  { id:29, label:"Pricing",        comp:ImgSlide26 },
+  { id:30, label:"Upgraded",       comp:ImgSlide27 },
+  { id:31, label:"Profile",        comp:ImgSlide28 },
+  { id:32, label:"Settings",       comp:ImgSlide29 },
+  { id:33, label:"RSVP Flow",      comp:ImgSlide30 },
+  { id:34, label:"Accept RSVP",    comp:ImgSlide31 },
+  { id:35, label:"Check-in",       comp:ImgSlide32 },
+  { id:36, label:"Notifications", comp:ImgSlide33 },
+  { id:37, label:"Additional",     comp:Slide8 },
+  { id:38, label:"Challenges",     comp:Slide9 },
 ];
 
 export default function App() {
