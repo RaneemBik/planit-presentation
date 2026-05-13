@@ -570,12 +570,9 @@ const Slide8 = ({ active }) => (
       {active&&<>
         <AddRow delay={0.35} title="JWT Authentication"          desc="Stateless token-based auth with 7-day expiry. Validated server-side on every protected API route."/>
         <AddRow delay={0.42} title="Email Verification"          desc="6-digit code sent on registration. Wrong code returns an inline error. Account activates only on correct entry."/>
-        <AddRow delay={0.49} title="Responsive Interface"        desc="Full mobile and tablet support across all screens — dashboard, event management, RSVP, and QR check-in."/>
-        <AddRow delay={0.56} title="In-App Notification System"  desc="Persistent notification store per user. RSVP confirmations, task due dates, and AI insights trigger alerts."/>
-        <AddRow delay={0.63} title="End-to-End Test Suite"       desc="Cypress tests covering registration, event creation, RSVP, and AI flows with reproducible seed data."/>
-        <AddRow delay={0.70} title="Environment Isolation"       desc="All secrets via dotenv, never committed. Separate .env schemas for frontend and backend with .env.example files."/>
-        <AddRow delay={0.77} title="Google Maps Integration"     desc="Location visualization with directions, venue info, and map-based planning for events."/>
-        <AddRow delay={0.84} title="Premium Billing System"      desc="Flexible subscription tiers with monthly or yearly options. Automated payment processing and credit management."/>
+        <AddRow delay={0.49} title="In-App Notification System"  desc="Persistent notification store per user. RSVP confirmations, task due dates, and AI insights trigger alerts."/>
+        <AddRow delay={0.56} title="Google Maps Integration"     desc="Location visualization with directions, venue info, and map-based planning for events."/>
+        <AddRow delay={0.63} title="Responsive Interface"        desc="Full mobile and tablet support across all screens — dashboard, event management, RSVP, and QR check-in."/>
       </>}
     </div>
   </div>
