@@ -772,8 +772,25 @@ const FeatureQuadImageSlide = ({ title, images, active }) => (
   </div>
 );
 
+const AuthFlowSlide = ({ title, images, active }) => (
+  <div style={{width:"100%",height:"100%",background:C.navy,position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"22px 44px",gap:10,overflow:"hidden"}}>
+    <NoiseBg/><GeoBg/>
+    {active&&<>
+      <div style={{textAlign:"center",animation:"fadeUp .6s .15s ease both",opacity:0}}>
+        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:36,fontWeight:600,color:C.white,letterSpacing:"-0.01em"}}>{title}</h2>
+        <Rule delay={0.25} width={70}/>
+      </div>
+      <div style={{width:"100%",maxWidth:900,display:"grid",gridTemplateColumns:"1fr 1fr",gap:14,animation:"fadeUp .6s .35s ease both",opacity:0}}>
+        {images.map((src,i)=>(
+          <img key={i} src={src} style={{width:"100%",height:"100%",maxHeight:280,borderRadius:12,border:`1px solid ${C.gold}30`,boxShadow:"0 14px 36px rgba(0,0,0,0.4)",objectFit:"contain",background:"rgba(7,17,31,0.4)"}}/>
+        ))}
+      </div>
+    </>}
+  </div>
+);
+
 const ImgSlide1 = ({ active }) => <FeatureImageSlide active={active} title="Landing Page (video background)" img={landingPage}/>;
-const ImgSlide2 = ({ active }) => <FeatureQuadImageSlide active={active} title="Authentication Flow" images={[reg, enterCode, wrongCode, correctCode]}/>;
+const ImgSlide2 = ({ active }) => <AuthFlowSlide active={active} title="Authentication Flow" images={[reg, enterCode, wrongCode, correctCode]}/>;
 const ImgSlide3 = ({ active }) => <FeatureImageSlide active={active} title="Dashboard" img={dashboard}/>;
 const ImgSlide4 = ({ active }) => <FeatureImageSlide active={active} title="Create Event" img={createEvent}/>;
 const ImgSlide5 = ({ active }) => <FeatureImageSlide active={active} title="Create Event Step 2" img={step2}/>;
