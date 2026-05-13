@@ -773,43 +773,40 @@ const FeatureQuadImageSlide = ({ title, images, active }) => (
 );
 
 const ImgSlide1 = ({ active }) => <FeatureImageSlide active={active} title="Landing Page (video background)" img={landingPage}/>;
-const ImgSlide2 = ({ active }) => <FeatureImageSlide active={active} title="Dashboard" img={dashboard}/>;
-const ImgSlide3 = ({ active }) => <FeatureImageSlide active={active} title="Register" img={reg}/>;
-const ImgSlide4 = ({ active }) => <FeatureImageSlide active={active} title="Code Sent" img={enterCode}/>;
-const ImgSlide5 = ({ active }) => <FeatureImageSlide active={active} title="Wrong Code" img={wrongCode}/>;
-const ImgSlide6 = ({ active }) => <FeatureImageSlide active={active} title="Correct Code" img={correctCode}/>;
-const ImgSlide8 = ({ active }) => <FeatureImageSlide active={active} title="Create Event" img={createEvent}/>;
-const ImgSlide9 = ({ active }) => <FeatureImageSlide active={active} title="Create Event Step 2" img={step2}/>;
-const ImgSlide10 = ({ active }) => <FeatureImageSlide active={active} title="AI Event Suggestion" img={summSug}/>;
-const ImgSlide11 = ({ active }) => <FeatureImageSlide active={active} title="AI Suggestions" img={aiSugg}/>;
-const ImgSlide12 = ({ active }) => <FeatureImageSlide active={active} title="Event Summary" img={eventSumm}/>;
-const ImgSlide13 = ({ active }) => <FeatureImageSlide active={active} title="Guests" img={eventsTab}/>;
-const ImgSlide14 = ({ active }) => <FeatureImageSlide active={active} title="Seating" img={autoAssign}/>;
-const ImgSlide15 = ({ active }) => <FeatureImageSlide active={active} title="Timeline" img={timeline}/>;
-const ImgSlide16 = ({ active }) => <FeatureImageSlide active={active} title="Budget & Expense" img={expense}/>;
-const ImgSlide17 = ({ active }) => <FeatureImageSlide active={active} title="Checklist" img={aiChecklist}/>;
-const ImgSlide18 = ({ active }) => <FeatureImageSlide active={active} title="AI Tab" img={aiTab}/>;
-const ImgSlide19 = ({ active }) => <FeatureImageSlide active={active} title="AI Tab Results" img={aiTabResult}/>;
-const ImgSlide20 = ({ active }) => <FeatureImageSlide active={active} title="AI Chatbot" img={aiChatbot}/>;
-const ImgSlide21 = ({ active }) => <FeatureImageSlide active={active} title="Calendar" img={calendar}/>;
-const ImgSlide22 = ({ active }) => <FeatureImageSlide active={active} title="AI Assistant Page" img={aiAssistantPage}/>;
-const ImgSlide23 = ({ active }) => <FeatureImageSlide active={active} title="Monthly Pricing" img={monthlyPrice}/>;
-const ImgSlide24 = ({ active }) => <FeatureImageSlide active={active} title="Fill Pricing Details" img={fillPriceForm}/>;
-const ImgSlide25 = ({ active }) => <FeatureImageSlide active={active} title="Pricing FAQ" img={faqPricing}/>;
-const ImgSlide26 = ({ active }) => <FeatureImageSlide active={active} title="Pricing" img={pricing}/>;
-const ImgSlide27 = ({ active }) => <FeatureImageSlide active={active} title="Upgraded" img={upgraded}/>;
-const ImgSlide28 = ({ active }) => <FeatureImageSlide active={active} title="Profile" img={profile}/>;
-const ImgSlide29 = ({ active }) => <FeatureImageSlide active={active} title="Settings" img={settings}/>;
-const ImgSlide30 = ({ active }) => (
+const ImgSlide2 = ({ active }) => <FeatureQuadImageSlide active={active} title="Authentication Flow" images={[reg, enterCode, wrongCode, correctCode]}/>;
+const ImgSlide3 = ({ active }) => <FeatureImageSlide active={active} title="Dashboard" img={dashboard}/>;
+const ImgSlide4 = ({ active }) => <FeatureImageSlide active={active} title="Create Event" img={createEvent}/>;
+const ImgSlide5 = ({ active }) => <FeatureImageSlide active={active} title="Create Event Step 2" img={step2}/>;
+const ImgSlide6 = ({ active }) => <FeatureImageSlide active={active} title="AI Event Suggestion" img={summSug}/>;
+const ImgSlide7 = ({ active }) => <FeatureImageSlide active={active} title="AI Suggestions" img={aiSugg}/>;
+const ImgSlide8 = ({ active }) => <FeatureImageSlide active={active} title="Event Summary" img={eventSumm}/>;
+const ImgSlide9 = ({ active }) => <FeatureImageSlide active={active} title="Guests" img={eventsTab}/>;
+const ImgSlide10 = ({ active }) => <FeatureImageSlide active={active} title="Seating" img={autoAssign}/>;
+const ImgSlide11 = ({ active }) => <FeatureImageSlide active={active} title="Timeline" img={timeline}/>;
+const ImgSlide12 = ({ active }) => <FeatureImageSlide active={active} title="Budget & Expense" img={expense}/>;
+const ImgSlide13 = ({ active }) => <FeatureImageSlide active={active} title="Checklist" img={aiChecklist}/>;
+const ImgSlide14 = ({ active }) => <FeatureImageSlide active={active} title="AI Tab" img={aiTab}/>;
+const ImgSlide15 = ({ active }) => <FeatureImageSlide active={active} title="AI Tab Results" img={aiTabResult}/>;
+const ImgSlide16 = ({ active }) => <FeatureImageSlide active={active} title="AI Chatbot" img={aiChatbot}/>;
+const ImgSlide17 = ({ active }) => <FeatureImageSlide active={active} title="Calendar" img={calendar}/>;
+const ImgSlide18 = ({ active }) => <FeatureImageSlide active={active} title="AI Assistant Page" img={aiAssistantPage}/>;
+const ImgSlide19 = ({ active }) => <FeatureImageSlide active={active} title="Monthly Pricing" img={monthlyPrice}/>;
+const ImgSlide20 = ({ active }) => <FeatureImageSlide active={active} title="Fill Pricing Details" img={fillPriceForm}/>;
+const ImgSlide21 = ({ active }) => <FeatureImageSlide active={active} title="Pricing FAQ" img={faqPricing}/>;
+const ImgSlide22 = ({ active }) => <FeatureImageSlide active={active} title="Pricing" img={pricing}/>;
+const ImgSlide23 = ({ active }) => <FeatureImageSlide active={active} title="Upgraded" img={upgraded}/>;
+const ImgSlide24 = ({ active }) => <FeatureImageSlide active={active} title="Profile" img={profile}/>;
+const ImgSlide25 = ({ active }) => <FeatureImageSlide active={active} title="Settings" img={settings}/>;
+const ImgSlide26 = ({ active }) => (
   <FeatureQuadImageSlide
     active={active}
     title="RSVP Flow"
     images={[rsvpLanding, dateCountDown, acceptDecline, inRsvpMap]}
   />
 );
-const ImgSlide31 = ({ active }) => <FeatureImageSlide active={active} title="Accept RSVP" img={acceptRsvp}/>;
-const ImgSlide32 = ({ active }) => <FeatureImageSlide active={active} title="Check-in Attendance" img={checkinAtten}/>;
-const ImgSlide33 = ({ active }) => <FeatureImageSlide active={active} title="Notification System" img={notiSystem}/>;
+const ImgSlide27 = ({ active }) => <FeatureImageSlide active={active} title="Accept RSVP" img={acceptRsvp}/>;
+const ImgSlide28 = ({ active }) => <FeatureImageSlide active={active} title="Check-in Attendance" img={checkinAtten}/>;
+const ImgSlide29 = ({ active }) => <FeatureImageSlide active={active} title="Notification System" img={notiSystem}/>;
 
 /* ══════════════════════════════════════════════════════════════════
    ROOT APP
@@ -821,40 +818,37 @@ const SLIDES = [
   { id:3, label:"Tech Stack",      comp:Slide3 },
   { id:4, label:"Website Flow",    comp:Slide4 },
   { id:5, label:"Landing Page",    comp:ImgSlide1 },
-  { id:6, label:"Register",        comp:ImgSlide3 },
-  { id:7, label:"Code Sent",       comp:ImgSlide4 },
-  { id:8, label:"Wrong Code",      comp:ImgSlide5 },
-  { id:9, label:"Correct Code",    comp:ImgSlide6 },
-  { id:10, label:"Dashboard",      comp:ImgSlide2 },
-  { id:11, label:"Create Event",   comp:ImgSlide8 },
-  { id:12, label:"Create Event Step 2", comp:ImgSlide9 },
-  { id:13, label:"AI Event Suggestion", comp:ImgSlide10 },
-  { id:14, label:"AI Suggestions", comp:ImgSlide11 },
-  { id:15, label:"Event Summary",  comp:ImgSlide12 },
-  { id:16, label:"Guests",         comp:ImgSlide13 },
-  { id:17, label:"Seating",        comp:ImgSlide14 },
-  { id:18, label:"Timeline",       comp:ImgSlide15 },
-  { id:19, label:"Budget & Expense", comp:ImgSlide16 },
-  { id:20, label:"Checklist",      comp:ImgSlide17 },
-  { id:21, label:"AI Tab",         comp:ImgSlide18 },
-  { id:22, label:"AI Tab Results", comp:ImgSlide19 },
-  { id:23, label:"AI Chatbot",     comp:ImgSlide20 },
-  { id:24, label:"Calendar",       comp:ImgSlide21 },
-  { id:25, label:"AI Assistant Page", comp:ImgSlide22 },
-  { id:26, label:"Monthly Pricing", comp:ImgSlide23 },
-  { id:27, label:"Fill Pricing",   comp:ImgSlide24 },
-  { id:28, label:"Pricing FAQ",    comp:ImgSlide25 },
-  { id:29, label:"Pricing",        comp:ImgSlide26 },
-  { id:30, label:"Upgraded",       comp:ImgSlide27 },
-  { id:31, label:"Profile",        comp:ImgSlide28 },
-  { id:32, label:"Settings",       comp:ImgSlide29 },
-  { id:33, label:"RSVP Flow",      comp:ImgSlide30 },
-  { id:34, label:"Accept RSVP",    comp:ImgSlide31 },
-  { id:35, label:"Check-in",       comp:ImgSlide32 },
-  { id:36, label:"Notifications", comp:ImgSlide33 },
-  { id:37, label:"Additional",     comp:Slide8 },
-  { id:38, label:"Vendors & Planners", comp:Slide11 },
-  { id:39, label:"Challenges",     comp:Slide9 },
+  { id:6, label:"Authentication Flow", comp:ImgSlide2 },
+  { id:7, label:"Dashboard",       comp:ImgSlide3 },
+  { id:8, label:"Create Event",    comp:ImgSlide4 },
+  { id:9, label:"Create Event Step 2", comp:ImgSlide5 },
+  { id:10, label:"AI Event Suggestion", comp:ImgSlide6 },
+  { id:11, label:"AI Suggestions", comp:ImgSlide7 },
+  { id:12, label:"Event Summary",  comp:ImgSlide8 },
+  { id:13, label:"Guests",         comp:ImgSlide9 },
+  { id:14, label:"Seating",        comp:ImgSlide10 },
+  { id:15, label:"Timeline",       comp:ImgSlide11 },
+  { id:16, label:"Budget & Expense", comp:ImgSlide12 },
+  { id:17, label:"Checklist",      comp:ImgSlide13 },
+  { id:18, label:"AI Tab",         comp:ImgSlide14 },
+  { id:19, label:"AI Tab Results", comp:ImgSlide15 },
+  { id:20, label:"AI Chatbot",     comp:ImgSlide16 },
+  { id:21, label:"Calendar",       comp:ImgSlide17 },
+  { id:22, label:"AI Assistant Page", comp:ImgSlide18 },
+  { id:23, label:"Monthly Pricing", comp:ImgSlide19 },
+  { id:24, label:"Fill Pricing",   comp:ImgSlide20 },
+  { id:25, label:"Pricing FAQ",    comp:ImgSlide21 },
+  { id:26, label:"Pricing",        comp:ImgSlide22 },
+  { id:27, label:"Upgraded",       comp:ImgSlide23 },
+  { id:28, label:"Profile",        comp:ImgSlide24 },
+  { id:29, label:"Settings",       comp:ImgSlide25 },
+  { id:30, label:"RSVP Flow",      comp:ImgSlide26 },
+  { id:31, label:"Accept RSVP",    comp:ImgSlide27 },
+  { id:32, label:"Check-in",       comp:ImgSlide28 },
+  { id:33, label:"Notifications", comp:ImgSlide29 },
+  { id:34, label:"Additional",     comp:Slide8 },
+  { id:35, label:"Vendors & Planners", comp:Slide11 },
+  { id:36, label:"Challenges",     comp:Slide9 },
 ];
 
 export default function App() {
